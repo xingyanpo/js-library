@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie</title>
+  <link rel="stylesheet" href="../css/reset.css">
+</head>
+<body style="display:flex;justify-content:center;align-items:center;">
+  <div>
+    <div class="cookie" style="width: 400px;height: 400px;background-color:#DDD;">
+      <h1 style="line-height: 50px;">Cookie Test</h1>
+      <p style="line-height: 50px;">我是一段文字用于cookie测试</p>
+      <button onclick="closePopup()" id="cookie-btn" style="width: 160px;height:36px;border-radius:6px;background-color: #FF4B00;color: #FFF;cursor: pointer;">Close</button>
+    </div>
+    <button onclick="delCookie()" style="width: 160px;height:36px;border-radius:6px;background-color: #999;color: #FFF;cursor: pointer;margin-top: 50px;">Delete Cookie</button>
+  </div>
+
+  <script src="../js/cookie.js"></script>
+  <script>
+    let popup = document.querySelector('.cookie');
+    let cname = 'isshowPopup';
+    (function () {
+      let popupShow = getCookie(cname);
+      if (popupShow != '') {
+        popup.style.display = popupShow;
+      } else {
+        setCookie(cname , 'none', 1);
+      }
+    })()
+
+    function delCookie () {
+      deleteCookie(cname);
+      location.reload();
+    }
+
+    function closePopup () {
+      popup.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
