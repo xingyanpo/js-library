@@ -12,7 +12,7 @@ function drag (vessel) {
     empty.style.border = imgBorder;
   })
 
-  document.addEventListener('dragend', (e) => {
+  document.addEventListener('dragend', (e) => { // 拖拽结束-事件
     e.target.style.border = 'none';
     empty.style.border = 'none';
   })
