@@ -5,3 +5,8 @@ li{ list-style: none;}
 a{text-decoration: none;}
 input,button,img{border: none}
 iframe {width:100%;}
+
+/*class样式库*/
+.scroll-style::-webkit-scrollbar {width:8px;height:8px;}
+.scroll-style::-webkit-scrollbar-thumb {border-radius: 10px; background: #d4d6d9;}
+.scroll-style::-webkit-scrollbar-track-piece {background-color: #fff;border-radius: 10px;}

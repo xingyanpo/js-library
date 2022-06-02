@@ -1,14 +1,13 @@
-function drag (images, vessel) {
-  let imgs = document.querySelector(images);
+function drag (vessel) {
   let empty = document.querySelector(vessel);
 
   let name;
-  imgs.addEventListener('dragstart', (e) => { // 事件-拖拽开始时将图片的alt属性保存在name
+  document.addEventListener('dragstart', (e) => { // 事件-拖拽开始时将图片的alt属性保存在name
     name = e.target.alt;
   })
 
   let imgBorder = '2px dashed red' // 拖拽中图片样式
-  imgs.addEventListener('drag', (e) => { // 事件-拖拽进行中
+  document.addEventListener('drag', (e) => { // 事件-拖拽进行中
     e.target.style.border = imgBorder;
     empty.style.border = imgBorder;
   })
@@ -37,4 +36,4 @@ function drag (images, vessel) {
 // 使用说明
 
 // 1. 引入方法
-// 2. 调用方法，传入参数，第一个参数为所有图片的父容器，第二个是图片放置的容器
+// 2. 调用方法，传入参数是图片放置的容器
