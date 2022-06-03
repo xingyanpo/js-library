@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Darg Mouse</title>
+  <style>
+    h1 {text-align: center;}
+    .photos {width: 60%;margin: 0 auto;position: relative;}
+    .photos img:first-child {width: 740px;height: 416.2px;}
+    .photos img:last-child {position: absolute;left: 0;top: 0;width: 88.8px;height: 84px;}
+  </style>
+</head>
+<body>
+  <section>
+    <h1>鼠标把图片拖到相应位置</h1>
+    <div class="photos">
+      <img draggable="false" src="https://s1.ax1x.com/2022/06/03/XaAZnO.png" alt="">
+      <img draggable="false" src="https://s1.ax1x.com/2022/06/03/XakHts.png" alt="">
+    </div>
+  </section>
+
+
+  <script src="../js/drag.js"></script>
+  <script>
+    dragMouse(".photos", ".photos img:last-child")
+  </script>
+</body>
+</html>

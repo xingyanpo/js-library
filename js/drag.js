@@ -56,3 +56,35 @@ function drag (vessel, imgs) {
 
 // 要求
 // 1. img标签需有 alt属性 和 draggable='true'
+
+
+function dragMouse (photos, snippet) {
+  let vessel = document.querySelector(photos);
+  let snip = document.querySelector(snippet);
+  const vesselLeft = vessel.offsetLeft;
+  const vesselTop = vessel.offsetTop;
+
+  snip.addEventListener('mousedown', (e) => {
+    const snipLeft = e.pageX - vesselLeft - snip.offsetLeft;
+    const snipTop = e.pageY - vesselTop - snip.offsetTop;
+
+    function moving (e) {
+      snip.style.left = e.pageX -snipLeft - vesselLeft + 'px';
+      snip.style.top = e.pageY - snipTop - vesselTop + 'px';
+    }
+
+    document.addEventListener('mousemove', moving, false);
+
+    document.addEventListener('mouseup', (e) => {
+      document.removeEventListener('mousemove', moving)
+    }, false)
+  }, false)
+}
+
+// 拖拽验证码方法
+// 1. 调用方法
+// 2. 使用方法 dragMouse(val1 , val2)
+// 3. 传入必填形参，第一个参数是两个图片的父容器 选择器，第二个是需要移动的图片 选择器
+
+// 要求
+// 1. img标签需有 alt属性 和 draggable='false'
