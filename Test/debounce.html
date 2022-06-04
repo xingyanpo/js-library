@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debounce</title>
+</head>
+<body>
+  <button id="btn" style="color:#FFF; border:none;display:block;background: #FF4b00;border-radius:6px;width:120px;height:38px;margin:100px auto;">防抖测试按钮</button>
+
+  <script src="../js/debounce.js"></script>
+  <script>
+    let btn = document.querySelector('#btn');
+    btn.addEventListener('click', debounce((e) => {
+      console.log('已剁')
+    }, 1))
+  </script>
+</body>
+</html>
