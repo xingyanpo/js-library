@@ -1,3 +1,4 @@
+/* 样式重写 */
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, button, p, blockquote, th, td
 {margin: 0;padding: 0;}
 body{text-align: center;background-color: #EEEDE8;}
@@ -7,6 +8,8 @@ input,button,img{border: none}
 iframe {width:100%;}
 
 /*class样式库*/
+
+/* 滚动条美化 .scroll-style */
 .scroll-style::-webkit-scrollbar {width:8px;height:8px;}
 .scroll-style::-webkit-scrollbar-thumb {border-radius: 10px; background: #d4d6d9;}
 .scroll-style::-webkit-scrollbar-track-piece {background-color: #fff;border-radius: 10px;}
