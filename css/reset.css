@@ -5,6 +5,7 @@ body{text-align: center;background-color: #EEEDE8;}
 li{ list-style: none;}
 a{text-decoration: none;}
 input,button,img{border: none}
+input {outline:none;}
 iframe {width:100%;}
 
 /*class样式库*/
