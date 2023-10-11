@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试vue在单页面中使用setup组合式api</title>
+    <script src="../library/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <div ref="num">{{info.message}}</div>
+        <button @click="handleCikck">Number Add</button>
+        <div class="test">测试文本</div>
+    </div>
+
+    <script>
+        const { createApp, onMounted, ref, reactive } = Vue
+
+        createApp({
+            setup() {
+                const num = ref()
+                const info = reactive({
+                    message: 'hello world'
+                })
+
+                const handleCikck = () => {
+                    console.log(num.value.innerHTML)
+                }
+
+                onMounted(() => {
+                    console.log('onMounted')
+                })
+
+                return {
+                    num,
+                    info,
+                    handleCikck
+                }
+            }
+        }).mount('#root')
+    </script>
+</body>
+
+</html>
